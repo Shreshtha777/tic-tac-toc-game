@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .mybtn{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            font-size: large;
+        }
+        .box{
+           
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <button class="mybtn"></button>
+        <button class="mybtn"></button>
+        <button class="mybtn"></button><br>
+        <button class="mybtn"></button>
+        <button class="mybtn"></button>
+        <button class="mybtn"></button><br>
+        <button class="mybtn"></button>
+        <button class="mybtn"></button>
+        <button class="mybtn"></button>
+    </div>
+
+   
+    
+
+    <script>
+        let counter=0;
+        var btn=document.getElementsByClassName('mybtn');
+        var btns= Array.from(btn);
+        
+        
+
+        for(var i=0;i<btns.length;i++){
+            btns[i].addEventListener('click',hi);
+        }
+        
+
+        function hi(e){
+            if(counter==0){
+                this.innerText="X";
+                this.style="background-color:green;color:white";
+                
+                counter=1;
+            }else{
+                this.innerText="O";
+                this.style="background-color:purple;color:white";
+                counter=0;
+            }
+            
+            console.log(this);
+        }
+        var init=0;
+        setInterval(function(){
+            if(init<btns.length){
+            btns[init].click();
+            init++;
+            console.log(init)
+            }
+        },1000);
+
+        // function cookMaggie( maggie,pani,tapeli){
+        //     console.log("your maggie will be ready in"
+        //     +maggie * 2 + "mint"
+        //     +"and ingredents use are:"
+        //     +maggie
+        //     +"maggie"
+        //     +pani
+        //     +"caps of water"
+        //     +"using"
+        //     + tapeli 
+        //     +"pani")
+            
+        // }
+        // cookMaggie(2,4,1);
+    </script>
+</body>
+</html>
